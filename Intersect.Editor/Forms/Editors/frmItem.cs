@@ -157,13 +157,20 @@ namespace Intersect.Editor.Forms.Editors
             nudDef.Maximum = Options.MaxStatValue;
             nudMR.Maximum = Options.MaxStatValue;
             nudSpd.Maximum = Options.MaxStatValue;
+            nudAgi.Maximum = Options.MaxStatValue;
+            nudDex.Maximum = Options.MaxStatValue;
+            NudPot.Maximum = Options.MaxStatValue;
+            NudCur.Maximum = Options.MaxStatValue;
 
             nudStr.Minimum = -Options.MaxStatValue;
             nudMag.Minimum = -Options.MaxStatValue;
             nudDef.Minimum = -Options.MaxStatValue;
             nudMR.Minimum = -Options.MaxStatValue;
             nudSpd.Minimum = -Options.MaxStatValue;
-
+            nudAgi.Minimum = -Options.MaxStatValue;
+            nudDex.Minimum = -Options.MaxStatValue;
+            NudPot.Minimum = -Options.MaxStatValue;
+            NudCur.Minimum = -Options.MaxStatValue;
             InitLocalization();
             UpdateEditor();
         }
@@ -339,13 +346,19 @@ namespace Intersect.Editor.Forms.Editors
                 nudDef.Value = mEditorItem.StatsGiven[2];
                 nudMR.Value = mEditorItem.StatsGiven[3];
                 nudSpd.Value = mEditorItem.StatsGiven[4];
-
+                nudAgi.Value = mEditorItem.StatsGiven[5];
+                nudDex.Value = mEditorItem.StatsGiven[6];
+                NudPot.Value = mEditorItem.StatsGiven[7];
+                NudCur.Value = mEditorItem.StatsGiven[8];
                 nudStrPercentage.Value = mEditorItem.PercentageStatsGiven[0];
                 nudMagPercentage.Value = mEditorItem.PercentageStatsGiven[1];
                 nudDefPercentage.Value = mEditorItem.PercentageStatsGiven[2];
                 nudMRPercentage.Value = mEditorItem.PercentageStatsGiven[3];
                 nudSpdPercentage.Value = mEditorItem.PercentageStatsGiven[4];
-
+                nudAgiPercentage.Value = mEditorItem.PercentageStatsGiven[5];
+                nudDexPercentage.Value= mEditorItem.PercentageStatsGiven[6];
+                NudPotPercentage.Value = mEditorItem.PercentageStatsGiven[7];
+                NudCurPercentage.Value = mEditorItem.PercentageStatsGiven[8];
                 nudHealthBonus.Value = mEditorItem.VitalsGiven[0];
                 nudManaBonus.Value = mEditorItem.VitalsGiven[1];
                 nudHPPercentage.Value = mEditorItem.PercentageVitalsGiven[0];
@@ -1353,6 +1366,46 @@ namespace Intersect.Editor.Forms.Editors
             EffectValueUpdating = true;
             nudEffectPercent.Value = mEditorItem.GetEffectPercentage(selected);
             EffectValueUpdating = false;
+        }
+
+        private void nudAgi_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.StatsGiven[5] = (int)nudAgi.Value;
+        }
+
+        private void nudAgiPercentage_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.PercentageStatsGiven[5] = (int)nudAgiPercentage.Value;
+        }
+
+        private void nudDex_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.StatsGiven[6] = (int)nudDex.Value;
+        }
+
+        private void nudDexPercentage_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.PercentageStatsGiven[6] = (int)nudDexPercentage.Value;
+        }
+
+        private void NudPot_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.StatsGiven[7] = (int)NudPot.Value;
+        }
+
+        private void NudPotPercentage_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.PercentageStatsGiven[7] = (int)NudPotPercentage.Value;
+        }
+
+        private void NudCur_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.StatsGiven[8] = (int)NudCur.Value;
+        }
+
+        private void NudCurPercentage_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.PercentageStatsGiven[8] = (int)NudCurPercentage.Value;
         }
     }
 

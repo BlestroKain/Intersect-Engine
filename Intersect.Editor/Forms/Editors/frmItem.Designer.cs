@@ -118,6 +118,26 @@ namespace Intersect.Editor.Forms.Editors
             this.cmbEquipmentAnimation = new DarkUI.Controls.DarkComboBox();
             this.lblEquipmentAnimation = new System.Windows.Forms.Label();
             this.grpStatBonuses = new DarkUI.Controls.DarkGroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.NudCurPercentage = new DarkUI.Controls.DarkNumericUpDown();
+            this.NudPotPercentage = new DarkUI.Controls.DarkNumericUpDown();
+            this.nudDexPercentage = new DarkUI.Controls.DarkNumericUpDown();
+            this.nudAgiPercentage = new DarkUI.Controls.DarkNumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.NudCur = new DarkUI.Controls.DarkNumericUpDown();
+            this.NudPot = new DarkUI.Controls.DarkNumericUpDown();
+            this.nudDex = new DarkUI.Controls.DarkNumericUpDown();
+            this.nudAgi = new DarkUI.Controls.DarkNumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblAgi = new System.Windows.Forms.Label();
             this.lblPercentage5 = new System.Windows.Forms.Label();
             this.lblPercentage4 = new System.Windows.Forms.Label();
             this.lblPercentage8 = new System.Windows.Forms.Label();
@@ -245,6 +265,14 @@ namespace Intersect.Editor.Forms.Editors
             ((System.ComponentModel.ISupportInitialize)(this.nudManaBonus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthBonus)).BeginInit();
             this.grpStatBonuses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCurPercentage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPotPercentage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDexPercentage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgiPercentage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpdPercentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMRPercentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefPercentage)).BeginInit();
@@ -1129,7 +1157,7 @@ namespace Intersect.Editor.Forms.Editors
             this.grpEquipment.ForeColor = System.Drawing.Color.Gainsboro;
             this.grpEquipment.Location = new System.Drawing.Point(2, 481);
             this.grpEquipment.Name = "grpEquipment";
-            this.grpEquipment.Size = new System.Drawing.Size(439, 1002);
+            this.grpEquipment.Size = new System.Drawing.Size(439, 1111);
             this.grpEquipment.TabIndex = 12;
             this.grpEquipment.TabStop = false;
             this.grpEquipment.Text = "Equipment";
@@ -1143,7 +1171,7 @@ namespace Intersect.Editor.Forms.Editors
             this.grpEffects.Controls.Add(this.lblEffectPercent);
             this.grpEffects.Controls.Add(this.nudEffectPercent);
             this.grpEffects.ForeColor = System.Drawing.Color.Gainsboro;
-            this.grpEffects.Location = new System.Drawing.Point(14, 483);
+            this.grpEffects.Location = new System.Drawing.Point(14, 621);
             this.grpEffects.Name = "grpEffects";
             this.grpEffects.Size = new System.Drawing.Size(201, 191);
             this.grpEffects.TabIndex = 57;
@@ -1196,7 +1224,7 @@ namespace Intersect.Editor.Forms.Editors
             this.grpRegen.Controls.Add(this.lblManaRegen);
             this.grpRegen.Controls.Add(this.lblRegenHint);
             this.grpRegen.ForeColor = System.Drawing.Color.Gainsboro;
-            this.grpRegen.Location = new System.Drawing.Point(13, 388);
+            this.grpRegen.Location = new System.Drawing.Point(13, 530);
             this.grpRegen.Margin = new System.Windows.Forms.Padding(2);
             this.grpRegen.Name = "grpRegen";
             this.grpRegen.Padding = new System.Windows.Forms.Padding(2);
@@ -1450,7 +1478,7 @@ namespace Intersect.Editor.Forms.Editors
             this.cmbEquipmentAnimation.FormattingEnabled = true;
             this.cmbEquipmentAnimation.Items.AddRange(new object[] {
             "None"});
-            this.cmbEquipmentAnimation.Location = new System.Drawing.Point(225, 664);
+            this.cmbEquipmentAnimation.Location = new System.Drawing.Point(226, 561);
             this.cmbEquipmentAnimation.Name = "cmbEquipmentAnimation";
             this.cmbEquipmentAnimation.Size = new System.Drawing.Size(207, 21);
             this.cmbEquipmentAnimation.TabIndex = 57;
@@ -1461,7 +1489,7 @@ namespace Intersect.Editor.Forms.Editors
             // lblEquipmentAnimation
             // 
             this.lblEquipmentAnimation.AutoSize = true;
-            this.lblEquipmentAnimation.Location = new System.Drawing.Point(218, 643);
+            this.lblEquipmentAnimation.Location = new System.Drawing.Point(219, 540);
             this.lblEquipmentAnimation.Name = "lblEquipmentAnimation";
             this.lblEquipmentAnimation.Size = new System.Drawing.Size(109, 13);
             this.lblEquipmentAnimation.TabIndex = 56;
@@ -1471,6 +1499,26 @@ namespace Intersect.Editor.Forms.Editors
             // 
             this.grpStatBonuses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.grpStatBonuses.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.grpStatBonuses.Controls.Add(this.label1);
+            this.grpStatBonuses.Controls.Add(this.label2);
+            this.grpStatBonuses.Controls.Add(this.label3);
+            this.grpStatBonuses.Controls.Add(this.label4);
+            this.grpStatBonuses.Controls.Add(this.NudCurPercentage);
+            this.grpStatBonuses.Controls.Add(this.NudPotPercentage);
+            this.grpStatBonuses.Controls.Add(this.nudDexPercentage);
+            this.grpStatBonuses.Controls.Add(this.nudAgiPercentage);
+            this.grpStatBonuses.Controls.Add(this.label5);
+            this.grpStatBonuses.Controls.Add(this.label6);
+            this.grpStatBonuses.Controls.Add(this.label7);
+            this.grpStatBonuses.Controls.Add(this.label8);
+            this.grpStatBonuses.Controls.Add(this.NudCur);
+            this.grpStatBonuses.Controls.Add(this.NudPot);
+            this.grpStatBonuses.Controls.Add(this.nudDex);
+            this.grpStatBonuses.Controls.Add(this.nudAgi);
+            this.grpStatBonuses.Controls.Add(this.label9);
+            this.grpStatBonuses.Controls.Add(this.label10);
+            this.grpStatBonuses.Controls.Add(this.label11);
+            this.grpStatBonuses.Controls.Add(this.lblAgi);
             this.grpStatBonuses.Controls.Add(this.lblPercentage5);
             this.grpStatBonuses.Controls.Add(this.lblPercentage4);
             this.grpStatBonuses.Controls.Add(this.lblPercentage8);
@@ -1501,10 +1549,290 @@ namespace Intersect.Editor.Forms.Editors
             this.grpStatBonuses.ForeColor = System.Drawing.Color.Gainsboro;
             this.grpStatBonuses.Location = new System.Drawing.Point(13, 150);
             this.grpStatBonuses.Name = "grpStatBonuses";
-            this.grpStatBonuses.Size = new System.Drawing.Size(202, 234);
+            this.grpStatBonuses.Size = new System.Drawing.Size(202, 383);
             this.grpStatBonuses.TabIndex = 40;
             this.grpStatBonuses.TabStop = false;
             this.grpStatBonuses.Text = "Stat Bonuses";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(179, 331);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 13);
+            this.label1.TabIndex = 102;
+            this.label1.Text = "%";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(179, 293);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 13);
+            this.label2.TabIndex = 101;
+            this.label2.Text = "%";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(181, 253);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 13);
+            this.label3.TabIndex = 100;
+            this.label3.Text = "%";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(179, 215);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 99;
+            this.label4.Text = "%";
+            // 
+            // NudCurPercentage
+            // 
+            this.NudCurPercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.NudCurPercentage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.NudCurPercentage.Location = new System.Drawing.Point(132, 329);
+            this.NudCurPercentage.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.NudCurPercentage.Name = "NudCurPercentage";
+            this.NudCurPercentage.Size = new System.Drawing.Size(43, 20);
+            this.NudCurPercentage.TabIndex = 98;
+            this.NudCurPercentage.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.NudCurPercentage.ValueChanged += new System.EventHandler(this.NudCurPercentage_ValueChanged);
+            // 
+            // NudPotPercentage
+            // 
+            this.NudPotPercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.NudPotPercentage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.NudPotPercentage.Location = new System.Drawing.Point(132, 291);
+            this.NudPotPercentage.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.NudPotPercentage.Name = "NudPotPercentage";
+            this.NudPotPercentage.Size = new System.Drawing.Size(43, 20);
+            this.NudPotPercentage.TabIndex = 97;
+            this.NudPotPercentage.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.NudPotPercentage.ValueChanged += new System.EventHandler(this.NudPotPercentage_ValueChanged);
+            // 
+            // nudDexPercentage
+            // 
+            this.nudDexPercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.nudDexPercentage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nudDexPercentage.Location = new System.Drawing.Point(134, 252);
+            this.nudDexPercentage.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudDexPercentage.Name = "nudDexPercentage";
+            this.nudDexPercentage.Size = new System.Drawing.Size(43, 20);
+            this.nudDexPercentage.TabIndex = 96;
+            this.nudDexPercentage.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudDexPercentage.ValueChanged += new System.EventHandler(this.nudDexPercentage_ValueChanged);
+            // 
+            // nudAgiPercentage
+            // 
+            this.nudAgiPercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.nudAgiPercentage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nudAgiPercentage.Location = new System.Drawing.Point(132, 214);
+            this.nudAgiPercentage.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudAgiPercentage.Name = "nudAgiPercentage";
+            this.nudAgiPercentage.Size = new System.Drawing.Size(43, 20);
+            this.nudAgiPercentage.TabIndex = 95;
+            this.nudAgiPercentage.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudAgiPercentage.ValueChanged += new System.EventHandler(this.nudAgiPercentage_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(114, 331);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(13, 13);
+            this.label5.TabIndex = 94;
+            this.label5.Text = "+";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(114, 293);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 13);
+            this.label6.TabIndex = 93;
+            this.label6.Text = "+";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(116, 253);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 13);
+            this.label7.TabIndex = 92;
+            this.label7.Text = "+";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(114, 215);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 13);
+            this.label8.TabIndex = 91;
+            this.label8.Text = "+";
+            // 
+            // NudCur
+            // 
+            this.NudCur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.NudCur.ForeColor = System.Drawing.Color.Gainsboro;
+            this.NudCur.Location = new System.Drawing.Point(14, 329);
+            this.NudCur.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.NudCur.Name = "NudCur";
+            this.NudCur.Size = new System.Drawing.Size(97, 20);
+            this.NudCur.TabIndex = 90;
+            this.NudCur.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.NudCur.ValueChanged += new System.EventHandler(this.NudCur_ValueChanged);
+            // 
+            // NudPot
+            // 
+            this.NudPot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.NudPot.ForeColor = System.Drawing.Color.Gainsboro;
+            this.NudPot.Location = new System.Drawing.Point(13, 291);
+            this.NudPot.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.NudPot.Name = "NudPot";
+            this.NudPot.Size = new System.Drawing.Size(98, 20);
+            this.NudPot.TabIndex = 89;
+            this.NudPot.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.NudPot.ValueChanged += new System.EventHandler(this.NudPot_ValueChanged);
+            // 
+            // nudDex
+            // 
+            this.nudDex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.nudDex.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nudDex.Location = new System.Drawing.Point(13, 252);
+            this.nudDex.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudDex.Name = "nudDex";
+            this.nudDex.Size = new System.Drawing.Size(98, 20);
+            this.nudDex.TabIndex = 88;
+            this.nudDex.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudDex.ValueChanged += new System.EventHandler(this.nudDex_ValueChanged);
+            // 
+            // nudAgi
+            // 
+            this.nudAgi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.nudAgi.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nudAgi.Location = new System.Drawing.Point(13, 214);
+            this.nudAgi.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudAgi.Name = "nudAgi";
+            this.nudAgi.Size = new System.Drawing.Size(98, 20);
+            this.nudAgi.TabIndex = 87;
+            this.nudAgi.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudAgi.ValueChanged += new System.EventHandler(this.nudAgi_ValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 313);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "Cures:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 275);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 13);
+            this.label10.TabIndex = 85;
+            this.label10.Text = "Damage Bonus:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(10, 236);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 13);
+            this.label11.TabIndex = 84;
+            this.label11.Text = "Dextery:";
+            // 
+            // lblAgi
+            // 
+            this.lblAgi.AutoSize = true;
+            this.lblAgi.Location = new System.Drawing.Point(10, 201);
+            this.lblAgi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAgi.Name = "lblAgi";
+            this.lblAgi.Size = new System.Drawing.Size(37, 13);
+            this.lblAgi.TabIndex = 83;
+            this.lblAgi.Text = "Agility:";
             // 
             // lblPercentage5
             // 
@@ -1710,7 +2038,7 @@ namespace Intersect.Editor.Forms.Editors
             // 
             this.nudRange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.nudRange.ForeColor = System.Drawing.Color.Gainsboro;
-            this.nudRange.Location = new System.Drawing.Point(132, 208);
+            this.nudRange.Location = new System.Drawing.Point(131, 358);
             this.nudRange.Name = "nudRange";
             this.nudRange.Size = new System.Drawing.Size(62, 20);
             this.nudRange.TabIndex = 53;
@@ -1837,9 +2165,9 @@ namespace Intersect.Editor.Forms.Editors
             this.lblMR.Location = new System.Drawing.Point(10, 124);
             this.lblMR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMR.Name = "lblMR";
-            this.lblMR.Size = new System.Drawing.Size(71, 13);
+            this.lblMR.Size = new System.Drawing.Size(40, 13);
             this.lblMR.TabIndex = 46;
-            this.lblMR.Text = "Magic Resist:";
+            this.lblMR.Text = "Vitality:";
             // 
             // lblDef
             // 
@@ -1847,9 +2175,9 @@ namespace Intersect.Editor.Forms.Editors
             this.lblDef.Location = new System.Drawing.Point(10, 85);
             this.lblDef.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDef.Name = "lblDef";
-            this.lblDef.Size = new System.Drawing.Size(37, 13);
+            this.lblDef.Size = new System.Drawing.Size(50, 13);
             this.lblDef.TabIndex = 45;
-            this.lblDef.Text = "Armor:";
+            this.lblDef.Text = "Defense:";
             // 
             // lblMag
             // 
@@ -1857,9 +2185,9 @@ namespace Intersect.Editor.Forms.Editors
             this.lblMag.Location = new System.Drawing.Point(10, 50);
             this.lblMag.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMag.Name = "lblMag";
-            this.lblMag.Size = new System.Drawing.Size(39, 13);
+            this.lblMag.Size = new System.Drawing.Size(64, 13);
             this.lblMag.TabIndex = 44;
-            this.lblMag.Text = "Magic:";
+            this.lblMag.Text = "Intelligence:";
             // 
             // lblStr
             // 
@@ -1874,7 +2202,7 @@ namespace Intersect.Editor.Forms.Editors
             // lblRange
             // 
             this.lblRange.AutoSize = true;
-            this.lblRange.Location = new System.Drawing.Point(11, 210);
+            this.lblRange.Location = new System.Drawing.Point(10, 360);
             this.lblRange.Name = "lblRange";
             this.lblRange.Size = new System.Drawing.Size(115, 13);
             this.lblRange.TabIndex = 20;
@@ -1895,7 +2223,7 @@ namespace Intersect.Editor.Forms.Editors
             this.cmbFemalePaperdoll.FormattingEnabled = true;
             this.cmbFemalePaperdoll.Items.AddRange(new object[] {
             "None"});
-            this.cmbFemalePaperdoll.Location = new System.Drawing.Point(229, 706);
+            this.cmbFemalePaperdoll.Location = new System.Drawing.Point(229, 844);
             this.cmbFemalePaperdoll.Name = "cmbFemalePaperdoll";
             this.cmbFemalePaperdoll.Size = new System.Drawing.Size(207, 21);
             this.cmbFemalePaperdoll.TabIndex = 36;
@@ -1906,7 +2234,7 @@ namespace Intersect.Editor.Forms.Editors
             // lblFemalePaperdoll
             // 
             this.lblFemalePaperdoll.AutoSize = true;
-            this.lblFemalePaperdoll.Location = new System.Drawing.Point(226, 689);
+            this.lblFemalePaperdoll.Location = new System.Drawing.Point(226, 827);
             this.lblFemalePaperdoll.Name = "lblFemalePaperdoll";
             this.lblFemalePaperdoll.Size = new System.Drawing.Size(91, 13);
             this.lblFemalePaperdoll.TabIndex = 35;
@@ -1915,7 +2243,7 @@ namespace Intersect.Editor.Forms.Editors
             // picFemalePaperdoll
             // 
             this.picFemalePaperdoll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picFemalePaperdoll.Location = new System.Drawing.Point(229, 733);
+            this.picFemalePaperdoll.Location = new System.Drawing.Point(229, 871);
             this.picFemalePaperdoll.Name = "picFemalePaperdoll";
             this.picFemalePaperdoll.Size = new System.Drawing.Size(200, 156);
             this.picFemalePaperdoll.TabIndex = 34;
@@ -1966,7 +2294,7 @@ namespace Intersect.Editor.Forms.Editors
             this.cmbMalePaperdoll.FormattingEnabled = true;
             this.cmbMalePaperdoll.Items.AddRange(new object[] {
             "None"});
-            this.cmbMalePaperdoll.Location = new System.Drawing.Point(19, 706);
+            this.cmbMalePaperdoll.Location = new System.Drawing.Point(19, 844);
             this.cmbMalePaperdoll.Name = "cmbMalePaperdoll";
             this.cmbMalePaperdoll.Size = new System.Drawing.Size(206, 21);
             this.cmbMalePaperdoll.TabIndex = 22;
@@ -1977,7 +2305,7 @@ namespace Intersect.Editor.Forms.Editors
             // lblMalePaperdoll
             // 
             this.lblMalePaperdoll.AutoSize = true;
-            this.lblMalePaperdoll.Location = new System.Drawing.Point(16, 689);
+            this.lblMalePaperdoll.Location = new System.Drawing.Point(16, 827);
             this.lblMalePaperdoll.Name = "lblMalePaperdoll";
             this.lblMalePaperdoll.Size = new System.Drawing.Size(80, 13);
             this.lblMalePaperdoll.TabIndex = 21;
@@ -1986,7 +2314,7 @@ namespace Intersect.Editor.Forms.Editors
             // picMalePaperdoll
             // 
             this.picMalePaperdoll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picMalePaperdoll.Location = new System.Drawing.Point(19, 733);
+            this.picMalePaperdoll.Location = new System.Drawing.Point(19, 871);
             this.picMalePaperdoll.Name = "picMalePaperdoll";
             this.picMalePaperdoll.Size = new System.Drawing.Size(200, 156);
             this.picMalePaperdoll.TabIndex = 16;
@@ -2988,6 +3316,14 @@ namespace Intersect.Editor.Forms.Editors
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthBonus)).EndInit();
             this.grpStatBonuses.ResumeLayout(false);
             this.grpStatBonuses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCurPercentage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPotPercentage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDexPercentage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgiPercentage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpdPercentage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMRPercentage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefPercentage)).EndInit();
@@ -3219,5 +3555,25 @@ namespace Intersect.Editor.Forms.Editors
         private ToolTip tooltips;
         private DarkGroupBox grpEffects;
         private ListBox lstBonusEffects;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private DarkNumericUpDown NudCurPercentage;
+        private DarkNumericUpDown NudPotPercentage;
+        private DarkNumericUpDown nudDexPercentage;
+        private DarkNumericUpDown nudAgiPercentage;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private DarkNumericUpDown NudCur;
+        private DarkNumericUpDown NudPot;
+        private DarkNumericUpDown nudDex;
+        private DarkNumericUpDown nudAgi;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label lblAgi;
     }
 }

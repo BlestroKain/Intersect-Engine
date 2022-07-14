@@ -4,14 +4,22 @@ namespace Intersect.Enums
     {
         Attack = 0,
 
-        AbilityPower,
+        Intelligence,
 
         Defense,
 
-        MagicResist,
+        Vitality,
 
         Speed,
 
-        StatCount
+        Agility,
+        
+        Dextery,
+
+        
+        Potency,
+        Cures,
+        StatCount,
     }
+    
 }
