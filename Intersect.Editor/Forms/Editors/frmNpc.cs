@@ -122,6 +122,8 @@ namespace Intersect.Editor.Forms.Editors
             nudDef.Maximum = Options.MaxStatValue;
             nudMR.Maximum = Options.MaxStatValue;
             nudSpd.Maximum = Options.MaxStatValue;
+            nudAgi.Maximum = Options.MaxStatValue;
+            nudDex.Maximum = Options.MaxStatValue;
             InitLocalization();
             UpdateEditor();
         }
@@ -297,10 +299,12 @@ namespace Intersect.Editor.Forms.Editors
                 cmbOnDeathEventParty.SelectedIndex = EventBase.ListIndex(mEditorItem.OnDeathPartyEventId) + 1;
 
                 nudStr.Value = mEditorItem.Stats[(int) Stat.Attack];
-                nudMag.Value = mEditorItem.Stats[(int) Stat.AbilityPower];
+                nudMag.Value = mEditorItem.Stats[(int) Stat.Intelligence];
                 nudDef.Value = mEditorItem.Stats[(int) Stat.Defense];
-                nudMR.Value = mEditorItem.Stats[(int) Stat.MagicResist];
+                nudMR.Value = mEditorItem.Stats[(int) Stat.Vitality];
                 nudSpd.Value = mEditorItem.Stats[(int) Stat.Speed];
+                nudAgi.Value = mEditorItem.Stats[(int)Stat.Agility];
+                nudDex.Value = mEditorItem.Stats[(int)Stat.Dextery];
                 nudHp.Value = mEditorItem.MaxVital[(int) Vital.Health];
                 nudMana.Value = mEditorItem.MaxVital[(int) Vital.Mana];
                 nudExp.Value = mEditorItem.Experience;
@@ -686,7 +690,7 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudMag_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Stats[(int) Stat.AbilityPower] = (int) nudMag.Value;
+            mEditorItem.Stats[(int) Stat.Intelligence] = (int) nudMag.Value;
         }
 
         private void nudDef_ValueChanged(object sender, EventArgs e)
@@ -696,7 +700,7 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudMR_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Stats[(int) Stat.MagicResist] = (int) nudMR.Value;
+            mEditorItem.Stats[(int) Stat.Vitality] = (int) nudMR.Value;
         }
 
         private void nudSpd_ValueChanged(object sender, EventArgs e)
@@ -1104,6 +1108,16 @@ namespace Intersect.Editor.Forms.Editors
         private void nudTenacity_ValueChanged(object sender, EventArgs e)
         {
             mEditorItem.Tenacity = (double)nudTenacity.Value;
+        }
+
+        private void nudAgi_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.Stats[(int)Stat.Agility] = (int)nudAgi.Value;
+        }
+
+        private void nudDex_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.Stats[(int)Stat.Dextery] = (int)nudDex.Value;
         }
     }
 

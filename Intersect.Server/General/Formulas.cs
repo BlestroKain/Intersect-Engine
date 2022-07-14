@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 using Intersect.Enums;
@@ -133,13 +133,16 @@ namespace Intersect.Server.General
                 expression.Parameters["A_Attack"] = attacker.Stat[(int) Stat.Attack].Value();
                 expression.Parameters["A_Defense"] = attacker.Stat[(int) Stat.Defense].Value();
                 expression.Parameters["A_Speed"] = attacker.Stat[(int) Stat.Speed].Value();
-                expression.Parameters["A_AbilityPwr"] = attacker.Stat[(int) Stat.AbilityPower].Value();
-                expression.Parameters["A_MagicResist"] = attacker.Stat[(int) Stat.MagicResist].Value();
+                expression.Parameters["A_AbilityPwr"] = attacker.Stat[(int) Stat.Intelligence].Value();
+                expression.Parameters["A_MagicResist"] = attacker.Stat[(int) Stat.Vitality].Value();
+                expression.Parameters["A_CureBonus"] = attacker.Stat[(int)Stat.Cures].Value();
+               //expression.Parameters["A_DamageBonus"] = attacker.Stat[(int)Stats.Fixeddamage].Value();
+                expression.Parameters["A_Potency"] = attacker.Stat[(int)Stat.Potency].Value();
                 expression.Parameters["V_Attack"] = victim.Stat[(int) Stat.Attack].Value();
                 expression.Parameters["V_Defense"] = victim.Stat[(int) Stat.Defense].Value();
                 expression.Parameters["V_Speed"] = victim.Stat[(int) Stat.Speed].Value();
-                expression.Parameters["V_AbilityPwr"] = victim.Stat[(int) Stat.AbilityPower].Value();
-                expression.Parameters["V_MagicResist"] = victim.Stat[(int) Stat.MagicResist].Value();
+                expression.Parameters["V_AbilityPwr"] = victim.Stat[(int) Stat.Intelligence].Value();
+                expression.Parameters["V_MagicResist"] = victim.Stat[(int) Stat.Vitality].Value();
                 expression.EvaluateFunction += delegate(string name, FunctionArgs args)
                 {
                     if (args == null)

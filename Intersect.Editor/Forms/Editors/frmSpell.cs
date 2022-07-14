@@ -138,11 +138,20 @@ namespace Intersect.Editor.Forms.Editors
             nudDef.Maximum = Options.MaxStatValue;
             nudMR.Maximum = Options.MaxStatValue;
             nudSpd.Maximum = Options.MaxStatValue;
+            nudAgi.Maximum = Options.MaxStatValue;
+            nudDex.Maximum = Options.MaxStatValue;
+            NudPot.Maximum = Options.MaxStatValue;
+            NudCur.Maximum = Options.MaxStatValue;
+
             nudStr.Minimum = -Options.MaxStatValue;
             nudMag.Minimum = -Options.MaxStatValue;
             nudDef.Minimum = -Options.MaxStatValue;
             nudMR.Minimum = -Options.MaxStatValue;
             nudSpd.Minimum = -Options.MaxStatValue;
+            nudAgi.Minimum = -Options.MaxStatValue;
+            nudDex.Minimum = -Options.MaxStatValue;
+            NudPot.Minimum = -Options.MaxStatValue;
+            NudCur.Minimum = -Options.MaxStatValue;
 
             nudCastDuration.Maximum = Int32.MaxValue;
             nudCooldownDuration.Maximum = Int32.MaxValue;
@@ -358,14 +367,23 @@ namespace Intersect.Editor.Forms.Editors
                 nudStr.Value = mEditorItem.Combat.StatDiff[(int) Stat.Attack];
                 nudDef.Value = mEditorItem.Combat.StatDiff[(int) Stat.Defense];
                 nudSpd.Value = mEditorItem.Combat.StatDiff[(int) Stat.Speed];
-                nudMag.Value = mEditorItem.Combat.StatDiff[(int) Stat.AbilityPower];
-                nudMR.Value = mEditorItem.Combat.StatDiff[(int) Stat.MagicResist];
+                nudMag.Value = mEditorItem.Combat.StatDiff[(int) Stat.Intelligence];
+                nudMR.Value = mEditorItem.Combat.StatDiff[(int) Stat.Vitality];
+                nudAgi.Value = mEditorItem.Combat.StatDiff[(int)Stat.Agility];
+                nudDex.Value = mEditorItem.Combat.StatDiff[(int)Stat.Dextery];
+                NudPot.Value = mEditorItem.Combat.StatDiff[(int)Stat.Potency];
+                NudCur.Value = mEditorItem.Combat.StatDiff[(int)Stat.Cures];
 
+                nudAgiPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Agility];
+                nudDexPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Dextery];
+                NudPotPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Potency];
+                NudCurPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Cures];
                 nudStrPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.Attack];
                 nudDefPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.Defense];
-                nudMagPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.AbilityPower];
-                nudMRPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.MagicResist];
+                nudMagPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.Intelligence];
+                nudMRPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.Vitality];
                 nudSpdPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.Speed];
+
 
                 chkFriendly.Checked = Convert.ToBoolean(mEditorItem.Combat.Friendly);
                 cmbDamageType.SelectedIndex = mEditorItem.Combat.DamageType;
@@ -845,7 +863,7 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudMag_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Combat.StatDiff[(int) Stat.AbilityPower] = (int) nudMag.Value;
+            mEditorItem.Combat.StatDiff[(int) Stat.Intelligence] = (int) nudMag.Value;
         }
 
         private void nudDef_ValueChanged(object sender, EventArgs e)
@@ -855,7 +873,7 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudMR_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Combat.StatDiff[(int) Stat.MagicResist] = (int) nudMR.Value;
+            mEditorItem.Combat.StatDiff[(int) Stat.Vitality] = (int) nudMR.Value;
         }
 
         private void nudSpd_ValueChanged(object sender, EventArgs e)
@@ -870,7 +888,7 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudMagPercentage_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Combat.PercentageStatDiff[(int) Stat.AbilityPower] = (int) nudMagPercentage.Value;
+            mEditorItem.Combat.PercentageStatDiff[(int) Stat.Intelligence] = (int) nudMagPercentage.Value;
         }
 
         private void nudDefPercentage_ValueChanged(object sender, EventArgs e)
@@ -880,7 +898,7 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudMRPercentage_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Combat.PercentageStatDiff[(int) Stat.MagicResist] = (int) nudMRPercentage.Value;
+            mEditorItem.Combat.PercentageStatDiff[(int) Stat.Vitality] = (int) nudMRPercentage.Value;
         }
 
         private void nudSpdPercentage_ValueChanged(object sender, EventArgs e)
@@ -1106,6 +1124,21 @@ namespace Intersect.Editor.Forms.Editors
         {
             Guid animationId = AnimationBase.IdFromList(cmbTickAnimation.SelectedIndex - 1);
             mEditorItem.TickAnimation = AnimationBase.Get(animationId);
+        }
+
+        private void nudAgi_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.Combat.StatDiff[(int)Stat.Agility] = (int)nudAgi.Value;
+        }
+
+        private void nudAgiPercentage_ValueChanged(object sender, EventArgs e)
+        {
+            mEditorItem.Combat.PercentageStatDiff[(int)Stat.Agility] = (int)nudAgiPercentage.Value;
+        }
+
+        private void nudCur_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
