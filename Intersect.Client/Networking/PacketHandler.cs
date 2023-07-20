@@ -1257,7 +1257,7 @@ namespace Intersect.Client.Networking
                 Globals.Me.Inventory[packet.Slot].Load(packet.ItemId, packet.Quantity, packet.BagId, packet.Properties);
                 Globals.Me.InventoryUpdatedDelegate?.Invoke();
             }
-        }
+               }
 
         //SpellsPacket
         public void HandlePacket(IPacketSender packetSender, SpellsPacket packet)
@@ -1637,6 +1637,7 @@ namespace Intersect.Client.Networking
             {
                 Globals.Bank[slot] = null;
             }
+            Interface.Interface.GameUi.RefreshBank();
         }
 
         //GameObjectPacket
@@ -2129,6 +2130,7 @@ namespace Intersect.Client.Networking
         public void HandlePacket(IPacketSender packetSender, BankUpdateValuePacket packet)
         {
             Globals.BankValue = packet.BankValue;
+          
         }
 
     }
