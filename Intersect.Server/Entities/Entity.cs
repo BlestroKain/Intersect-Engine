@@ -1857,7 +1857,7 @@ namespace Intersect.Server.Entities
                     }
                 }
             }
-
+            if (isVictimEvaded(target)) return;
             Attack(
                 target, baseDamage, 0, damageType, scalingStat, scaling, critChance, critMultiplier, deadAnimations,
                 aliveAnimations, true
