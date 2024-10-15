@@ -178,6 +178,10 @@ namespace Intersect.Editor.Forms.Editors
             this.toolStripItemPaste = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripItemUndo = new System.Windows.Forms.ToolStripButton();
+            this.nudDex = new DarkUI.Controls.DarkNumericUpDown();
+            this.nudAgi = new DarkUI.Controls.DarkNumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpNpcs.SuspendLayout();
             this.grpGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRgbaA)).BeginInit();
@@ -223,6 +227,8 @@ namespace Intersect.Editor.Forms.Editors
             this.grpNpcVsNpc.SuspendLayout();
             this.grpSpells.SuspendLayout();
             this.toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).BeginInit();
             this.SuspendLayout();
             // 
             // grpNpcs
@@ -2283,6 +2289,66 @@ namespace Intersect.Editor.Forms.Editors
             this.toolStripItemUndo.Text = "Undo";
             this.toolStripItemUndo.Click += new System.EventHandler(this.toolStripItemUndo_Click);
             // 
+            // nudDex
+            // 
+            this.nudDex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.nudDex.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nudDex.Location = new System.Drawing.Point(105, 190);
+            this.nudDex.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudDex.Name = "nudDex";
+            this.nudDex.Size = new System.Drawing.Size(77, 20);
+            this.nudDex.TabIndex = 51;
+            this.nudDex.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudDex.ValueChanged += new System.EventHandler(this.nudDex_ValueChanged);
+            // 
+            // nudAgi
+            // 
+            this.nudAgi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.nudAgi.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nudAgi.Location = new System.Drawing.Point(13, 190);
+            this.nudAgi.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudAgi.Name = "nudAgi";
+            this.nudAgi.Size = new System.Drawing.Size(77, 20);
+            this.nudAgi.TabIndex = 50;
+            this.nudAgi.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudAgi.ValueChanged += new System.EventHandler(this.nudAgi_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(106, 173);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Dextery:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 174);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Agility:";
+            // 
             // FrmNpc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2363,6 +2429,8 @@ namespace Intersect.Editor.Forms.Editors
             this.grpSpells.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).EndInit();
             this.ResumeLayout(false);
 
         }
