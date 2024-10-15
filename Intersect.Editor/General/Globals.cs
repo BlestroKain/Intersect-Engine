@@ -191,9 +191,9 @@ namespace Intersect.Editor.General
                     return "Vitality";
                 case (int) Stat.Speed:
                     return "Speed";
-                case (int)Stat.Agility:
+                case (int)Stat.Magic:
                     return "Agility";
-                case (int)Stat.Dextery:
+                case (int)Stat.Dexterity:
                     return "Dextery";
                 case (int) Stat.Potency :
                     return "Bonus Damage";

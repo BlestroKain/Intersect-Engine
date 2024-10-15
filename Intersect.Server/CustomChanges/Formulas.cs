@@ -40,8 +40,8 @@ namespace Intersect.Server.General
             }
             try
             {
-                expression.Parameters["A_Accuracy"] = (attacker.Stat[(int)Stat.Attack].Value() / 5 + attacker.Stat[(int)Stat.Agility].Value());
-                expression.Parameters["V_Evasion"] = 20 + victim.Stat[(int)Stat.Defense].Value() + victim.Stat[(int)Stat.Agility].Value();
+                expression.Parameters["A_Accuracy"] = (attacker.Stat[(int)Stat.Attack].Value() / 5 + attacker.Stat[(int)Stat.Dexterity].Value());
+                expression.Parameters["V_Evasion"] = 20 + victim.Stat[(int)Stat.Defense].Value() + victim.Stat[(int)Stat.Dexterity].Value();
                 expression.EvaluateFunction += delegate (string name, FunctionArgs args)
                 {
                     if (args == null)

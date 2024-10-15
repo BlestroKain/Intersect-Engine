@@ -1376,9 +1376,9 @@ namespace Intersect.Editor.Forms.Editors
             this.label3.Location = new System.Drawing.Point(5, 160);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 68;
-            this.label3.Text = "Agility:";
+            this.label3.Text = "Magic:";
             // 
             // lblPercentage5
             // 

@@ -1830,9 +1830,9 @@ namespace Intersect.Editor.Forms.Editors
             this.lblAgi.Location = new System.Drawing.Point(10, 201);
             this.lblAgi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAgi.Name = "lblAgi";
-            this.lblAgi.Size = new System.Drawing.Size(37, 13);
+            this.lblAgi.Size = new System.Drawing.Size(39, 13);
             this.lblAgi.TabIndex = 83;
-            this.lblAgi.Text = "Agility:";
+            this.lblAgi.Text = "Magic:";
             // 
             // lblPercentage5
             // 

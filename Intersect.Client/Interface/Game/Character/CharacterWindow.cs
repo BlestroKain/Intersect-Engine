@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using Intersect.Client.Core;
 using Intersect.Client.Framework.File_Management;
 using Intersect.Client.Framework.Gwen;
@@ -22,18 +22,27 @@ namespace Intersect.Client.Interface.Game.Character
         //Equipment List
         public List<EquipmentItem> Items = new List<EquipmentItem>();
 
-        Label mAbilityPwrLabel;
+        Label mIntellingenceLabel;
 
-        Button mAddAbilityPwrBtn;
+        Button mAddIntellingenceBtn;
 
         Button mAddAttackBtn;
 
         Button mAddDefenseBtn;
 
-        Button mAddMagicResistBtn;
+        Button mAddVitalityBtn;
 
         Button mAddSpeedBtn;
+        Label mMagicLabel;
+        Button mAddMagicBtn;
 
+        Label mDexterityLabel;
+        Button mAddDexterityBtn;
+
+        Label mCuresLabel;
+        Label mPotencyLabel;
+        Label mDamageLabel;
+        Label mEvasionLabel;
         //Stats
         Label mAttackLabel;
 
@@ -56,7 +65,7 @@ namespace Intersect.Client.Interface.Game.Character
 
         private ItemProperties mItemProperties = null;
 
-        Label mMagicRstLabel;
+        Label mVitalityLabel;
 
         Label mPointsLabel;
 
@@ -105,8 +114,10 @@ namespace Intersect.Client.Interface.Game.Character
         int CooldownAmount = 0;
 
         Label mManaSteal;
-
+       
         int ManaStealAmount = 0;
+
+        public float Damage { get; set; }
 
         //Init
         public CharacterWindow(Canvas gameCanvas)
@@ -145,21 +156,33 @@ namespace Intersect.Client.Interface.Game.Character
             mAddAttackBtn.Clicked += _addAttackBtn_Clicked;
 
             mDefenseLabel = new Label(mCharacterWindow, "DefenseLabel");
-            mAddDefenseBtn = new Button(mCharacterWindow, "IncreaseDefenseButton");
-            mAddDefenseBtn.Clicked += _addDefenseBtn_Clicked;
-
+           
             mSpeedLabel = new Label(mCharacterWindow, "SpeedLabel");
-            mAddSpeedBtn = new Button(mCharacterWindow, "IncreaseSpeedButton");
-            mAddSpeedBtn.Clicked += _addSpeedBtn_Clicked;
+         
 
-            mAbilityPwrLabel = new Label(mCharacterWindow, "AbilityPowerLabel");
-            mAddAbilityPwrBtn = new Button(mCharacterWindow, "IncreaseAbilityPowerButton");
-            mAddAbilityPwrBtn.Clicked += _addAbilityPwrBtn_Clicked;
+            mIntellingenceLabel = new Label(mCharacterWindow, "AbilityPowerLabel");
+            mAddIntellingenceBtn = new Button(mCharacterWindow, "IncreaseAbilityPowerButton");
+            mAddIntellingenceBtn.Clicked += _addAbilityPwrBtn_Clicked;
 
-            mMagicRstLabel = new Label(mCharacterWindow, "MagicResistLabel");
-            mAddMagicResistBtn = new Button(mCharacterWindow, "IncreaseMagicResistButton");
-            mAddMagicResistBtn.Clicked += _addMagicResistBtn_Clicked;
+            mVitalityLabel = new Label(mCharacterWindow, "VitalityLabel");
+            mAddVitalityBtn = new Button(mCharacterWindow, "IncreaseVitalityButton");
+            mAddVitalityBtn.Clicked += _addMagicResistBtn_Clicked;
+            // Initialize Agility Label and Button
+            mMagicLabel = new Label(mCharacterWindow, "MagicLabel");
+            mAddMagicBtn = new Button(mCharacterWindow, "IncreaseMagicButton");
+            mAddMagicBtn.Clicked += _addMagicBtn_Clicked;
+            mDamageLabel = new Label(mCharacterWindow, "DamageLabel");
+            // Initialize Dexterity Label and Button
+            mDexterityLabel = new Label(mCharacterWindow, "DexterityLabel");
+            mAddDexterityBtn = new Button(mCharacterWindow, "IncreaseDexterityButton");
+            mAddDexterityBtn.Clicked += _addDexterityBtn_Clicked;
 
+            // Initialize Cures Label and Button
+            mCuresLabel = new Label(mCharacterWindow, "CuresLabel");
+           
+            // Initialize Potency Label and Button
+            mPotencyLabel = new Label(mCharacterWindow, "PotencyLabel");
+         
             mPointsLabel = new Label(mCharacterWindow, "PointsLabel");
 
             for (var i = 0; i < Options.EquipmentSlots.Count; i++)
@@ -181,8 +204,18 @@ namespace Intersect.Client.Interface.Game.Character
             mTenacity = new Label(mCharacterWindow, "Tenacity");
             mCooldownReduction = new Label(mCharacterWindow, "CooldownReduction");
             mManaSteal = new Label(mCharacterWindow, "Manasteal");
-
+            mEvasionLabel = new Label(mCharacterWindow, "Evasion");
             mCharacterWindow.LoadJsonUi(GameContentManager.UI.InGame, Graphics.Renderer.GetResolutionString());
+        }
+
+        private void _addDexterityBtn_Clicked(Base sender, ClickedEventArgs arguments)
+        {
+            PacketSender.SendUpgradeStat((int)Stat.Dexterity);
+        }
+
+        private void _addMagicBtn_Clicked(Base sender, ClickedEventArgs arguments)
+        {
+            PacketSender.SendUpgradeStat((int)Stat.Magic);
         }
 
         //Update Button Event Handlers
@@ -196,7 +229,7 @@ namespace Intersect.Client.Interface.Game.Character
             PacketSender.SendUpgradeStat((int) Stat.Intelligence);
         }
 
-        void _addSpeedBtn_Clicked(Base sender, ClickedEventArgs arguments)
+       /* void _addSpeedBtn_Clicked(Base sender, ClickedEventArgs arguments)
         {
             PacketSender.SendUpgradeStat((int) Stat.Speed);
         }
@@ -205,7 +238,7 @@ namespace Intersect.Client.Interface.Game.Character
         {
             PacketSender.SendUpgradeStat((int) Stat.Defense);
         }
-
+       */
         void _addAttackBtn_Clicked(Base sender, ClickedEventArgs arguments)
         {
             PacketSender.SendUpgradeStat((int) Stat.Attack);
@@ -326,42 +359,57 @@ namespace Intersect.Client.Interface.Game.Character
             }
 
             mAttackLabel.SetText(
-                Strings.Character.stat0.ToString(Strings.Combat.stat0, Globals.Me.Stat[(int) Stat.Attack])
-            );
+     Strings.Character.stat0.ToString(Strings.Combat.stat0, Globals.Me.Stat[(int)Stat.Attack])
+ );
 
             mDefenseLabel.SetText(
-                Strings.Character.stat2.ToString(Strings.Combat.stat2, Globals.Me.Stat[(int) Stat.Defense])
+                Strings.Character.stat2.ToString(Strings.Combat.stat2, Globals.Me.Stat[(int)Stat.Defense])
             );
 
             mSpeedLabel.SetText(
-                Strings.Character.stat4.ToString(Strings.Combat.stat4, Globals.Me.Stat[(int) Stat.Speed])
+                Strings.Character.stat4.ToString(Strings.Combat.stat4, Globals.Me.Stat[(int)Stat.Speed])
             );
 
-            mAbilityPwrLabel.SetText(
-                Strings.Character.stat1.ToString(Strings.Combat.stat1, Globals.Me.Stat[(int) Stat.Intelligence])
+            mIntellingenceLabel.SetText(
+                Strings.Character.stat1.ToString(Strings.Combat.stat1, Globals.Me.Stat[(int)Stat.Intelligence])
             );
 
-            mMagicRstLabel.SetText(
-                Strings.Character.stat3.ToString(Strings.Combat.stat3, Globals.Me.Stat[(int) Stat.Vitality])
+            mVitalityLabel.SetText(
+                Strings.Character.stat3.ToString(Strings.Combat.stat3, Globals.Me.Stat[(int)Stat.Vitality])
             );
 
+            // New stats added below:
+
+            mMagicLabel.SetText(
+                Strings.Character.stat5.ToString(Strings.Combat.stat5, Globals.Me.Stat[(int)Stat.Magic])
+            );
+
+            mDexterityLabel.SetText(
+                Strings.Character.stat6.ToString(Strings.Combat.stat6, Globals.Me.Stat[(int)Stat.Dexterity])
+            );
+
+            mPotencyLabel.SetText(
+                Strings.Character.stat7.ToString(Strings.Combat.stat7, Globals.Me.Stat[(int)Stat.Potency])
+            );
+
+            mCuresLabel.SetText(
+                Strings.Character.stat8.ToString(Strings.Combat.stat8, Globals.Me.Stat[(int)Stat.Cures])
+            );
+            var MinDamage = Damage * .975;
+            var MaxDamage = Damage * 1.025;
+            mDamageLabel.SetText(Strings.Character.Damage.ToString(MinDamage,MaxDamage));
             mPointsLabel.SetText(Strings.Character.points.ToString(Globals.Me.StatPoints));
-            mAddAbilityPwrBtn.IsHidden = Globals.Me.StatPoints == 0 ||
+            mAddIntellingenceBtn.IsHidden = Globals.Me.StatPoints == 0 ||
                                          Globals.Me.Stat[(int) Stat.Intelligence] == Options.MaxStatValue;
 
             mAddAttackBtn.IsHidden =
                 Globals.Me.StatPoints == 0 || Globals.Me.Stat[(int) Stat.Attack] == Options.MaxStatValue;
 
-            mAddDefenseBtn.IsHidden = Globals.Me.StatPoints == 0 ||
-                                      Globals.Me.Stat[(int) Stat.Defense] == Options.MaxStatValue;
-
-            mAddMagicResistBtn.IsHidden = Globals.Me.StatPoints == 0 ||
+           
+            mAddVitalityBtn.IsHidden = Globals.Me.StatPoints == 0 ||
                                           Globals.Me.Stat[(int) Stat.Vitality] == Options.MaxStatValue;
 
-            mAddSpeedBtn.IsHidden =
-                Globals.Me.StatPoints == 0 || Globals.Me.Stat[(int) Stat.Speed] == Options.MaxStatValue;
-
-            UpdateExtraBuffs();
+           UpdateExtraBuffs();
 
             for (var i = 0; i < Options.EquipmentSlots.Count; i++)
             {
@@ -420,6 +468,32 @@ namespace Intersect.Client.Interface.Game.Character
             mManaSteal.SetText(Strings.Character.Manasteal.ToString(0));
 
             mAttackSpeed.SetText(Strings.Character.AttackSpeed.ToString(Globals.Me.CalculateAttackTime() / 1000f));
+            CalculateDamage(mPlayer);
+        }
+
+        public void CalculateDamage(ClassBase classBase)
+        {          
+            // Daño base del arma equipada
+            int weaponDamage = GetWeaponDamage();
+
+            // Daño base del ataque
+            float baseDamage = classBase.Damage + weaponDamage;
+
+            // Escalamiento como porcentaje (se puede ajustar)
+            float scaling = 100f;                      
+
+            // Obtener el daño escalado por las estadísticas de la clase
+            float scalingStatValue = Globals.Me.Stat[(int)Stat.Attack]; // Escalamiento basado en la inteligencia, por ejemplo
+            float scaleFactor = scaling / 100f;
+
+            // Cálculo del daño total
+            Damage = (baseDamage + (scalingStatValue * scaleFactor));
+
+        }
+
+        private int GetWeaponDamage()
+        {
+            return 0;
         }
 
         /// <summary>

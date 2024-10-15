@@ -369,13 +369,13 @@ namespace Intersect.Editor.Forms.Editors
                 nudSpd.Value = mEditorItem.Combat.StatDiff[(int) Stat.Speed];
                 nudMag.Value = mEditorItem.Combat.StatDiff[(int) Stat.Intelligence];
                 nudMR.Value = mEditorItem.Combat.StatDiff[(int) Stat.Vitality];
-                nudAgi.Value = mEditorItem.Combat.StatDiff[(int)Stat.Agility];
-                nudDex.Value = mEditorItem.Combat.StatDiff[(int)Stat.Dextery];
+                nudAgi.Value = mEditorItem.Combat.StatDiff[(int)Stat.Magic];
+                nudDex.Value = mEditorItem.Combat.StatDiff[(int)Stat.Dexterity];
                 NudPot.Value = mEditorItem.Combat.StatDiff[(int)Stat.Potency];
                 NudCur.Value = mEditorItem.Combat.StatDiff[(int)Stat.Cures];
 
-                nudAgiPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Agility];
-                nudDexPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Dextery];
+                nudAgiPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Magic];
+                nudDexPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Dexterity];
                 NudPotPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Potency];
                 NudCurPercentage.Value = mEditorItem.Combat.StatDiff[(int)Stat.Cures];
                 nudStrPercentage.Value = mEditorItem.Combat.PercentageStatDiff[(int) Stat.Attack];
@@ -1128,12 +1128,12 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudAgi_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Combat.StatDiff[(int)Stat.Agility] = (int)nudAgi.Value;
+            mEditorItem.Combat.StatDiff[(int)Stat.Magic] = (int)nudAgi.Value;
         }
 
         private void nudAgiPercentage_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Combat.PercentageStatDiff[(int)Stat.Agility] = (int)nudAgiPercentage.Value;
+            mEditorItem.Combat.PercentageStatDiff[(int)Stat.Magic] = (int)nudAgiPercentage.Value;
         }
 
         private void nudCur_ValueChanged(object sender, EventArgs e)

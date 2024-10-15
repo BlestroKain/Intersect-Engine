@@ -505,6 +505,14 @@ namespace Intersect.Client.Localization
 
             public static LocalizedString stat4 = @"{00}: {01}";
 
+            public static LocalizedString stat5 = @"{00}: {01}";
+
+            public static LocalizedString stat6 = @"{00}: {01}";
+
+            public static LocalizedString stat7 = @"{00}: {01}";
+
+            public static LocalizedString stat8 = @"{00}: {01}";
+
             public static LocalizedString stats = @"Stats:";
 
             public static LocalizedString title = @"Character";
@@ -528,7 +536,7 @@ namespace Intersect.Client.Localization
             public static LocalizedString CooldownReduction = @"Cooldown Reduction: {00}%";
 
             public static LocalizedString Manasteal = @"Manasteal: {00}%";
-
+            public static LocalizedString Damage = @"Damage:{00}/{01} ";
         }
 
         public partial struct CharacterCreation
@@ -656,15 +664,15 @@ namespace Intersect.Client.Localization
             public static LocalizedString exp = @"Experience";
 
             public static LocalizedString stat0 = @"Attack";
-
-            public static LocalizedString stat1 = @"Ability Power";
-
+            public static LocalizedString stat1 = @"Intelligence";
             public static LocalizedString stat2 = @"Defense";
-
-            public static LocalizedString stat3 = @"Magic Resist";
-
+            public static LocalizedString stat3 = @"Vitality";
             public static LocalizedString stat4 = @"Speed";
-
+            public static LocalizedString stat5 = @"Magic";
+            public static LocalizedString stat6 = @"Dexterity";
+            public static LocalizedString stat7 = @"Potency";
+            public static LocalizedString stat8 = @"Cures";
+            public static LocalizedString Damage = @"Damage";
             public static LocalizedString targetoutsiderange = @"Target too far away!";
 
             public static LocalizedString vital0 = @"Health";

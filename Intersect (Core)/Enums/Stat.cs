@@ -12,9 +12,9 @@ namespace Intersect.Enums
 
         Speed,
 
-        Agility,
+        Magic,
         
-        Dextery,
+        Dexterity,
 
         
         Potency,

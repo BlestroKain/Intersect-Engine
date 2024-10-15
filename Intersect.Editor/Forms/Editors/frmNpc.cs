@@ -303,8 +303,8 @@ namespace Intersect.Editor.Forms.Editors
                 nudDef.Value = mEditorItem.Stats[(int) Stat.Defense];
                 nudMR.Value = mEditorItem.Stats[(int) Stat.Vitality];
                 nudSpd.Value = mEditorItem.Stats[(int) Stat.Speed];
-                nudAgi.Value = mEditorItem.Stats[(int)Stat.Agility];
-                nudDex.Value = mEditorItem.Stats[(int)Stat.Dextery];
+                nudAgi.Value = mEditorItem.Stats[(int)Stat.Magic];
+                nudDex.Value = mEditorItem.Stats[(int)Stat.Dexterity];
                 nudHp.Value = mEditorItem.MaxVital[(int) Vital.Health];
                 nudMana.Value = mEditorItem.MaxVital[(int) Vital.Mana];
                 nudExp.Value = mEditorItem.Experience;
@@ -1112,12 +1112,12 @@ namespace Intersect.Editor.Forms.Editors
 
         private void nudAgi_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Stats[(int)Stat.Agility] = (int)nudAgi.Value;
+            mEditorItem.Stats[(int)Stat.Magic] = (int)nudAgi.Value;
         }
 
         private void nudDex_ValueChanged(object sender, EventArgs e)
         {
-            mEditorItem.Stats[(int)Stat.Dextery] = (int)nudDex.Value;
+            mEditorItem.Stats[(int)Stat.Dexterity] = (int)nudDex.Value;
         }
     }
 
